@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate Price Predictor</title>
+</head>
+<body>
+<center>
+<h2 style = 'text-align: center;color: blue;font-style: italic;'>Real Estate Price Prediction</h2>
+
+<form action="/predict" method="post">
+    <!-- <label>Area (sq ft):</label> -->
+    <input placeholder="Area (sq ft):" type="number" name="area" required><br><br>
+    <!-- <label>Bedrooms:</label> -->
+    <input placeholder="Bedrooms:" type="number" name="bedrooms" required><br><br>
+    <!-- <label>Age (in years):</label> -->
+    <input placeholder="Stories:" type="number" name="stories" required><br><br>
+    <input type="submit" value="Predict Price" style="background-color: red;color: white;padding: 10px;">
+</form>
+<style>
+    input {background-color:lightblue;border-radius: 5px;border-color: red;}
+</style>
+</center>
+{% if prediction_text %}
+    <h3>{{ prediction_text }}</h3>
+{% endif %}
+</body>
+</html>
